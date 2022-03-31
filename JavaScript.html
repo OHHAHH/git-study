@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script>
+            function displayDate(){
+                document.getElementById("demo").innerHTML=Date();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>JavaScript程序</h1>
+        <p id="demo">段落</p>
+        <button type="button" onclick="displayDate()">显示日期</button>
+
+        <button type="button" onclick="alert('欢迎！')">点我</button>
+
+        
+        <p id="demo1">JavaScript能改变HTML元素的内容</p>
+        <script>
+            function myFunction(){
+                x=document.getElementById("demo1");//找到元素
+                x.innerHTML="Hello JavaScript!";//改变内容
+                x.style.color="blue";//改变样式
+            }
+        </script>
+        <button type="button" onclick="myFunction()">点击这里</button></br>
+
+        <p>请输入数字，如果输入值不是数字，浏览器会弹出提示框</p>
+        <input id="demo2" type="text">
+        <script>
+            function myFunction(){
+                var x=document.getElementById("demo2").value;
+                if(x==""||isNaN(x))
+                {
+                    alert("不是数字");
+                }
+            }
+        </script>
+        <button type="button" onclick="myFunction()">点击这里</button></br>
+
+        <script>
+            //window.alert(123);
+        </script>
+
+        <button onclick="myFunction()">点击</button>
+        <script>
+            function myFunction(){
+                document.write(Date());
+            }
+        </script></br>
+
+        <p>浏览器中使用F12来启用调试模式，在调试窗口点击“Console”菜单</p>
+        <script>
+            a=5;
+            b=6;
+            c=a+b;
+            console.log(c);
+        </script></br>
+
+        <p id="demo3"></p>
+        <script>
+            document.getElementById("demo3").innerHTML=5*10;
+        </script></br>
+
+        <p id="demo4"></p>
+        <script>
+            var a,b,c;
+            a=10;
+            b=5;
+            c=a+b;
+            document.getElementById("demo4").innerHTML=c;
+        </script><br>
+
+       <h1>我的 Web 页面</h1>
+       <p id="demo5">一个段落。</p>
+       <div id="myDIV">一个 DIV。</div>
+       <script>
+            document.getElementById("demo5").innerHTML="你好 Dolly";
+            document.getElementById("myDIV").innerHTML="你最近怎么样?";
+       </script><br>
+
+       <h1>我的 Web 页面</h1>
+       <p id="myPar">我是一个段落。</p>
+       <div id="myDiv">我是一个div。</div>
+       <p>
+       <button type="button" onclick="myFunction()">点击这里</button>
+       </p>
+       <script>
+            function myFunction(){
+       	       document.getElementById("myPar").innerHTML="你好世界！";
+       	       document.getElementById("myDiv").innerHTML="你最近怎么样?";
+       }
+       </script>
+       <p>当您点击上面的按钮时，两个元素会改变。</p><br>
+
+       <p id="demo6"></p>
+       <script>
+           var pi=3.14;
+           var name="Bill Gates";
+           var answer='Yes';
+           document.write(pi+"<br>");
+           document.write(name+"<br>");
+           document.write(answer+"<br>");
+          // document.getElementById("demo6").innerHTML=pi;
+       </script><br>
+
+       <script>
+           var i;
+           var cars=new Array();
+           cars[0]="Sab";
+           cars[1]="Volvo";
+           cars[2]="BMW";
+           for(i=0;i<cars.length;i++)
+           {
+               document.write(cars[i]+"<br>");
+           }
+       </script><br>
+
+       <script>
+           var person={
+               firstname:"Join",
+               lastname:"Doe",
+               id:5566
+           };
+           document.write(person.firstname+"<br>");
+           document.write(person["lastname"]+"<br>")
+       </script>
+
+       <script>
+        var person;
+        var car="Volvo";
+        document.write(person + "<br>");
+        document.write(car + "<br>");
+        var car=null
+        document.write(car + "<br>");
+        </script><br>
+
+        <p>创建JavaScript对象</p>
+        <p id="demo7"></p>
+        <script>
+            var person={
+                firstname:"Join",
+                lastname:"Dov",
+                age:50,
+                eyeColor:"blue",
+        };
+        //document.write(person.firstname+"现在"+person.age+"岁")
+        document.getElementById("demo7").innerHTML=person.firstname+"现在"+person.age+"岁";
+        </script><br>
+
+        <p>创建JavaScript对象</p>
+        <p id="demo8"></p>
+        <script>
+            var person={
+                firstname:"Join",
+                lastname:"Dov",
+                id:5566,
+                fullName:function()
+                {
+                    return this.firstname+""+this.lastname;
+                }
+        };
+        document.getElementById("demo8").innerHTML=person.fullName();
+        </script><br>
+
+        <p>点击这个按钮，来调用带参数的函数</p>
+        <button onclick="myFunction('Harry Potter','Wizard')">点击这里</button>
+        <button onclick="myFunction('Bob','Builder')">点击这里</button>
+        <script>
+            function myFunction(name,job){
+                alert("Welcome"+name+",the"+job);
+            }
+        </script><br>
+
+        <p>本例调用的函数会执行一个计算，然后返回结果</p>
+        <p id="demo9"></p>
+        <script>
+            function myFunction(a,b){
+                return a*b;
+            }
+            document.getElementById("demo9").innerHTML=myFunction(4,3);
+        </script><br>
+
+        <p id="demo10"></p>
+        <script>
+            function myFunction(a,b){
+                if(a>b)
+                {
+                    return;
+                }
+                x=a+b
+            }
+            document.getElementById("demo10").innerHTML=myFunction(4,5);
+        </script><br>
+
+        <button onclick="getElementById('demo11').innerHTML=Date()">现在的时间是?</button>
+        <p id="demo11"></p>
+        
+        <button onclick="this.innerHTML=Date()">现在的时间是?</button>
+    </body>
+</html>
